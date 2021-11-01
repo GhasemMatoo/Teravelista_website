@@ -20,5 +20,5 @@ def single_views(requset,pid):
     Post =get_object_or_404(Posts,id=pid)
     Post.counted_views= Post.counted_views +1
     Post.save() 
-    context = {'Post': Post}
+    context = {'Post': Post,'Posts': Posts}
     return render(requset, 'blog/blog-single.html',context)
