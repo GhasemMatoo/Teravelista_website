@@ -23,6 +23,8 @@ class post(models.Model):
     update_date = models.DateTimeField(auto_now=True)
     published_date = models.DateTimeField(auto_now=False)
 
+    def excerpt(self):
+        return ' '.join(self.content.split()[:10])+'...'
 
 class Meta:
     ordreing = ['-created_date']
