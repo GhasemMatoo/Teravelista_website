@@ -32,7 +32,7 @@
 					<div class="col-lg-3  col-md-3 meta-details">
 						<ul class="tags">
 						{% for cat in Post.category.all %}
-							<li><a href="#">{{cat.name}}</a> {% if not forloop.last %},{% endif %}</li>
+							<li><a href="{% url 'blog:category' cat_name=cat.name %}">{{cat.name}}</a> {% if not forloop.last %},{% endif %}</li>
 						{% endfor %}
 						</ul>
 						<div class="user-details row">
@@ -240,7 +240,7 @@
 
 					{% include "blog/includes/blog-Ads.html" %}
 
-					{% include "blog/includes/blog-Post-Catgories.html" %}
+					{% category_cunter %}
 
 					{% include "blog/includes/blog-Newsletter.html" %}
 
