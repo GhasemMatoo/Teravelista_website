@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.sitemaps',
     
+    'django_summernote',
     'robots',
     'debug_toolbar',
     'taggit',
@@ -56,7 +57,55 @@ SITE_ID = 2
 ROBOTS_USE_SITEMAP = True
 ROBOTS_USE_HOST = False
 
+# django-summernote Config
+SUMMERNOTE_THEME = 'bs5'
+# The server is not filtering in my system because of this I cament code
+''' 
+SUMMERNOTE_CONFIG = {
+    # Using SummernoteWidget - iframe mode, default
+    'iframe': True,
+    # You can put custom Summernote settings
+    'summernote': {
+        # As an example, using Summernote Air-mode
+        'airMode': False,
 
+        # Change editor size
+        #'width': '100%',
+        'height': '380',
+
+        # Use proper language setting automatically (default)
+        'lang': None,
+
+        # Toolbar customization
+        # https://summernote.org/deep-dive/#custom-toolbar-popover
+        'toolbar': [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['fontname', ['fontname']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', 'codeview', 'help']],
+        ],
+
+        # Or, explicitly set language/locale for editor
+        'lang': 'ko-KR',
+
+        # You can also add custom settings for external plugins
+        'print': {
+            'stylesheetUrl': '/some_static_folder/printable.css',
+        },
+        'codemirror': {
+            'mode': 'htmlmixed',
+            'lineNumbers': 'true',
+            # You have to include theme file in 'css' or 'css_for_inplace' before using it.
+            'theme': 'monokai',
+        },
+    },
+
+}
+'''
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -149,8 +198,12 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#  Django Debug Toolbar Config
 '''
 INTERNAL_IPS = [
     '127.0.0.1',
 ]
 '''
+# MY CAMPUTER MAC OS NAT USE DEFULT AUTOMATIC RUN
+# X_FRAME_OPTIONS = 'SAMEORUGIN'
