@@ -59,7 +59,7 @@ ROBOTS_USE_HOST = False
 
 # django-summernote Config
 SUMMERNOTE_THEME = 'bs5'
-# The server is not filtering in my system because of this I cament code
+# The server is not filtering in my system because of this I comments SUMMERNOTE_CONFIG code
 ''' 
 SUMMERNOTE_CONFIG = {
     # Using SummernoteWidget - iframe mode, default
@@ -206,4 +206,7 @@ INTERNAL_IPS = [
 ]
 '''
 # MY CAMPUTER MAC OS NAT USE DEFULT AUTOMATIC RUN
-# X_FRAME_OPTIONS = 'SAMEORUGIN'
+''' 
+X_FRAME_OPTIONS = 'SAMEORUGIN'
+
+'''
