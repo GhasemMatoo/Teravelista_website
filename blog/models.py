@@ -30,9 +30,29 @@ class post(models.Model):
     
     def get_absolute_url(self):
         return reverse('blog:single', kwargs={'pid' : self.id})
+    
+    def __str__(self):
+        return self.title
 
 class Meta:
     ordreing = ['-created_date']
 
+
+
+class comment(models.Model):
+    Poost = models.ForeignKey(post, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
+    email = models.EmailField()
+    subject = models.CharField(max_length=250)
+    messages = models.TextField()
+    approved = models.BooleanField(default=False)
+    update_date = models.DateTimeField(auto_now_add=True)
+    created_date = models.DateTimeField(auto_now=True)
+
     def __str__(self):
-        return self.title
+        return self.name 
+         
+class Meta:
+    ordreing = ['-created_date'] 
+
+ 
