@@ -152,7 +152,8 @@
 						<div class="form-group">
 							<textarea class="form-control mb-10" rows="5" name="messages" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
 						</div>	
-						<button class="primary-btn text-uppercase" type="submit">Post Comment</button>	
+						<p style="float:left" >{{form.captcha}}</p>
+						<button class="primary-btn text-uppercase" type="submit" style="left: 10%;">Post Comment</button>	
 					</form>
 					{% if messages %}
  					{% for message in messages %}

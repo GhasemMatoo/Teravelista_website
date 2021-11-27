@@ -50,6 +50,7 @@ INSTALLED_APPS = [
 
     'website.apps.WebsiteConfig',
     'blog.apps.BlogConfig',
+    'authentication.apps.AuthenticationConfig',
 ]
 
 # Config sites
