@@ -53,6 +53,10 @@ INSTALLED_APPS = [
     'authentication.apps.AuthenticationConfig',
 ]
 
+# Reset_Password
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 # Config sites
 SITE_ID = 2
 
