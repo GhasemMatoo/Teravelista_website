@@ -45,8 +45,14 @@ def register_View(request):
             form = RegisterForm(request.POST)
             if form.is_valid():
                 email = form.cleaned_data.get('email')
-                form.save()
-                return redirect('/authenticate/login')
+                email = email.lower()
+                kwargs = {'email': email}
+                try:
+                    username = User.objects.get(**kwargs).username
+                    messages.add_message(request, messages.ERROR, 'warning that invalid Eimail because used')
+                except User.DoesNotExist:
+                    form.save()
+                    return redirect('/authenticate/login')
         form = RegisterForm()
         return render(request, 'authenticate/register.html',{'form': form})
     else:
